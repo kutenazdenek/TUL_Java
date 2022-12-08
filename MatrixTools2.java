@@ -37,6 +37,78 @@ public class MatrixTools2 {
                 }
                 return true;
             }
+            
+            public static boolean jeSymetricka(double[][] a, int epsFaktor) {
+                double max = absMax(a);
+                // ... double eps = ;
+            }
+            
+            public static double absMax(double[][] a) {
+                
+            }
+            
+            // dalsi...
+            /**
+             * testuje zda soucty ve vsech radcich, sloupcich 
+             * a obouch diagonalach jsou stejne
+             * @param a
+             * @return 
+             */
+            public static boolean souctyStejne(int[][] a) {
+                
+                   int ps;
+                   int n = a.length;
+                   for (int i = 0; i < a.length; i++) {
+                       ps += a[i][i];
+                   }
+                   
+                   for (int i = 0; i < n; i++) {
+                       int srad = 0;
+                       int ssloupec = 0;
+                       for (int j = 0; j < n; j++) {
+                           srad += a [i][j];
+                           ssloupec += a[j][i];
+                       }
+                       if (srad != ps) {
+                           return false;
+                       }
+                       if (ssloupec != ps) {
+                           return false;
+                       }
+                   }
+                   int sdiag = 0;
+                   for (int i = 0; i < n; i++) {
+                       sdiag += a[i][n -1 -i];
+                   }
+                   if (sdiag != ps) {
+                       return false;
+                   }
+                   return true;
+                
+                /*
+                boolean dano = false;
+                int prvniradek = 0, prvnisloupec = 0;
+                
+                for (int i = 0; i < a.length; i++) {
+                    int soucet1 = 0, soucet2 = 0;
+                    for (int j = 0; j < a[0].length; j++) {
+                        soucet1 += a[i][j];
+                        soucet2 += a[j][i];
+                    }
+                    if (!dano) {
+                        prvniradek = soucet1;
+                        dano = true;
+                    }
+                    if (soucet1 != soucet2) {
+                        return false;
+                    }
+                }
+                */
+            }
+            
+            /**
+             * obsahuje vsechna cisla
+             */
         }
     }
 }
